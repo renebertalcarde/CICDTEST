@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using CICDTEST.Models;
+using WebApplication3.Models;
 
-namespace CICDTEST
+namespace WebApplication3
 {
     public partial class Startup
     {

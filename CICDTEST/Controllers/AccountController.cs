@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CICDTEST.Models;
+using WebApplication3.Models;
 
-namespace CICDTEST.Controllers
+namespace WebApplication3.Controllers
 {
     [Authorize]
     public class AccountController : Controller

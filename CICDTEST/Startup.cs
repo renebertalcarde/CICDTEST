@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(CICDTEST.Startup))]
-namespace CICDTEST
+[assembly: OwinStartupAttribute(typeof(WebApplication3.Startup))]
+namespace WebApplication3
 {
     public partial class Startup
     {

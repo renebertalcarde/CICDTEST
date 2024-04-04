@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using CICDTEST.Models;
+using WebApplication3.Models;
 
-namespace CICDTEST
+namespace WebApplication3
 {
     public class EmailService : IIdentityMessageService
     {
