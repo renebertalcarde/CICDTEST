@@ -20,13 +20,12 @@ jobs:
         run: dotnet publish -c Release -o ./publish  # Build the ASP.NET project in Release mode
 
       - name: Copy files to on-premise server
-        uses: appleboy/ftp-action@master  # Action to upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5  # Action to upload files via FTP
         with:
-          host: ${{ secrets.SERVER_HOST }}  # Your server's hostname or IP address
+          server: ${{ secrets.SERVER_HOST }}  # Your server's hostname or IP address
           username: ${{ secrets.FTP_USERNAME }}  # Your FTP username
           password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password
-          local: "./publish/"  # Path to the built ASP.NET project files
-          remote: "/var/www/myapp"  # Destination directory on the server
+         
 
       - name: Restart IIS
         run: restart-webitempool -name "DefaultAppPool"  # Restart the DefaultAppPool in IIS
