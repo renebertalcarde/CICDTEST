@@ -29,7 +29,7 @@ jobs:
         with:
           server: apps.ilogixphils.com  # Your server's hostname or IP address
           username: renebert  # Your FTP username
-          password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password
+          password: iLogix123456!  # Your FTP password
          
 
       - name: Restart IIS
