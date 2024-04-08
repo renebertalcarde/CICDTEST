@@ -30,6 +30,8 @@ jobs:
           server: apps.ilogixphils.com
           username: renebert
           password: iLogix123456!
+          protocol: ftps
+          port: 21
          
 
       - name: Restart IIS
