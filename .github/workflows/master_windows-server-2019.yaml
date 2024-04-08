@@ -12,33 +12,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup MSBuild path
-        uses: microsoft/setup-msbuild@v1.0.2
+      # - name: Setup MSBuild path
+      #   uses: microsoft/setup-msbuild@v1.0.2
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
+      # - name: Setup NuGet
+      #   uses: NuGet/setup-nuget@v1.0.5
 
-      - name: Restore NuGet packages
-        run: nuget restore
+      # - name: Restore NuGet packages
+      #   run: nuget restore
 
-      - name: Publish to folder
-        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
+      # - name: Publish to folder
+      #   run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
-      - name: Copy files to on-premise server
-        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+      - name: Copy files to on-premise server        
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ftp_host: apps.ilogixphils.com
-          ftp_username: renebert
-          ftp_password: iLogix123456!
-          local_source_dir: "dist"
-          dist_target_dir: "www/my-app"
-          
-        
-        # uses: SamKirkland/FTP-Deploy-Action@v4.3.5  # Action to upload files via FTP
-        # with:
-        #   server: apps.ilogixphils.com  # Your server's hostname or IP address
-        #   username: renebert  # Your FTP username
-        #   password: iLogix123456!  # Your FTP password
+          server: apps.ilogixphils.com
+          username: renebert
+          password: iLogix123456!
          
 
       - name: Restart IIS
