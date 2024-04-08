@@ -3,14 +3,14 @@ name: Deploy to On-Premise Server
 on:
   push:
     branches:
-      - master  # Deploy when changes are pushed to the main branch
+      - OnPremiseTest  # Deploy when changes are pushed to the main branch
 
 jobs:
   deploy:
     runs-on: windows-latest  # Specify the operating system for the job
 
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
 
       # - name: Setup MSBuild path
       #   uses: microsoft/setup-msbuild@v1.0.2
