@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
-            4.8
+            4.x
             6.x
           cache: true
           cache-dependency-path: subdir/packages.lock.json  
